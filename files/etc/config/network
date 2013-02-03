@@ -9,22 +9,32 @@ config interface se00
 	option 'proto'	'static'
 	option 'ipaddr'	'172.30.42.1'
 	option 'netmask'	'255.255.255.224'
+	option 'ip6assign' '64'
 
 config interface ge00
 	option 'ifname'	'ge00'
 	option 'proto'	'dhcp'
+
+config interface ge01
+	option ifname	@ge00
+	option proto	dhcpv6
+	option 'broadcast' '1'
+	option 'metric' '2048'
+	option 'reqprefix' '60'
 
 config interface sw00
 	option 'type' 'none'
 	option 'proto'	'static'
 	option 'ipaddr' '172.30.42.65'
 	option 'netmask'	'255.255.255.224'
+	option 'ip6assign' '64'
 
 config interface sw10
 	option 'type' 'none'
 	option 'proto'	'static'
 	option 'ipaddr'	'172.30.42.97'
 	option 'netmask' '255.255.255.224'
+	option 'ip6assign' '64'
 
 config switch
 	option name	rtl8366s
@@ -85,12 +95,14 @@ config 'interface' 'gw00'
 	option 'proto' 'static'
 	option 'ipaddr' '172.30.42.129'
 	option 'netmask' '255.255.255.224'
+	option 'ip6assign' '64'
 
 config 'interface' 'gw10'
 	option 'type' 'none'
 	option 'proto' 'static'
 	option 'ipaddr' '172.30.42.161'
 	option 'netmask' '255.255.255.224'
+	option 'ip6assign' '64'
 
 config 'interface' 'gw01'
 	option 'proto' 'ahcp'
@@ -98,12 +110,3 @@ config 'interface' 'gw01'
 config 'interface' 'gw11'
 	option 'proto' 'ahcp'
 
-#config 'interface' 'ge01' 
-#        option 'proto' '6to4' 
-#        list 'adv_interface' 'se00'
-#	 list 'adv_interface' 'sw00'
-#	 list 'adv_interface' 'sw10'
-#	 list 'adv_interface' 'gw00'
-# 	 list 'adv_interface' 'gw10'
-#        option 'adv_subnet' '1'
-#	option 'wan_device' 'ge00'
