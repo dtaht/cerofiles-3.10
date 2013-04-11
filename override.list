@@ -1,5 +1,6 @@
 polipo
 quagga
+babeld
 alttcp
 kmod-tcp-ledbat
 dibbler-server
