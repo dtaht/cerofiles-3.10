@@ -129,7 +129,6 @@ tcpe
 dnsval
 babeld
 freeswitch
-nuttcp
 httping
 uftpd
 paris-traceroute
@@ -173,3 +172,6 @@ gdisk
 rup
 mtr
 snmp-utils
+minissdpd
+nut-logger
+nut-monitor
