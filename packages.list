@@ -175,3 +175,5 @@ snmp-utils
 minissdpd
 nut-logger
 nut-monitor
+tahoe-lafs
+aiccu
