@@ -1,7 +1,8 @@
 package aqm
 
 config queue 'ge00'
-	option qdisc 'nfq_codel'
+	option qdisc 'fq_codel'
+	option script 'simple.qos'
 	option adsl '0'
 	option interface 'ge00'
 	option download '2000'

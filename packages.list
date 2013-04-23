@@ -129,7 +129,6 @@ tcpe
 dnsval
 babeld
 freeswitch
-nuttcp
 httping
 uftpd
 paris-traceroute
@@ -175,4 +174,9 @@ mtr
 snmp-utils
 dansguardian
 tahoe-lafs
+minissdpd
+nut-logger
+nut-monitor
+tahoe-lafs
+aiccu
 pure-ftpd
