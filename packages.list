@@ -173,3 +173,6 @@ gdisk
 rup
 mtr
 snmp-utils
+dansguardian
+tahoe-lafs
+pure-ftpd
