@@ -172,6 +172,11 @@ gdisk
 rup
 mtr
 snmp-utils
+dansguardian
+tahoe-lafs
 minissdpd
 nut-logger
 nut-monitor
+tahoe-lafs
+aiccu
+pure-ftpd
