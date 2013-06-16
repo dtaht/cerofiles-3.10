@@ -5,8 +5,8 @@ config ahcpd
 	option 'mode' 'server'
 	# Uncomment the following lines to enable ahcpd on the desired
 	# interfaces.
-#	list 'interface' 'gw01'
-#	list 'interface' 'gw11'
+	list 'interface' 'gw01'
+	list 'interface' 'gw11'
 
 	# The following only makes sense in 'server' mode.
 	# Tweak to suit your needs.

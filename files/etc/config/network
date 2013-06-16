@@ -105,8 +105,14 @@ config 'interface' 'gw10'
 	option 'ip6assign' '64'
 
 config 'interface' 'gw01'
-	option 'proto' 'ahcp'
+	option 'proto' 'static'
+	option 'ipaddr' '172.30.42.224'
+	option 'netmask' '255.255.255.255'
+	#option 'ip6assign' '128'
 
 config 'interface' 'gw11'
-	option 'proto' 'ahcp'
+	option 'proto' 'static'
+	option 'ipaddr' '172.30.42.224'
+	option 'netmask' '255.255.255.255'
+	#option 'ip6assign' '128'
 
