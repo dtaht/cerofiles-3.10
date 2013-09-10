@@ -9,6 +9,6 @@ state=Maine
 location=Erewhon
 commonname=OpenWrt
 
-/usr/bin/px5g selfsigned -der \
+/usr/sbin/px5g selfsigned -der \
     -days $days -newkey rsa:$bits -keyout "$key" -out "$cert" \
     -subj "/C=$country/ST=$state/L=$location/CN=$commonname"
