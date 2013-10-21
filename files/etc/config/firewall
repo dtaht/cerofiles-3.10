@@ -4,7 +4,7 @@ config defaults
 	option output 'ACCEPT'
 	option forward 'REJECT'
 	option drop_invalid '1'
-	option syn_flood '1'
+	option synflood_protect '1'
 	option synflood_rate '200'
 	option synflood_burst '500'
 	option tcp_ecn '1'
@@ -23,7 +23,7 @@ config zone
 	option forward 'ACCEPT'
 	option output 'ACCEPT'
 	option name 'lan'
-	option network 'se00 sw00 sw10'
+	option device 's+'
 
 config forwarding
 	option dest 'wan'
@@ -38,7 +38,7 @@ config zone
 	option output 'ACCEPT'
 	option name 'guest'
 	option forward 'ACCEPT'
-	option network 'gw00 gw01 gw10 gw11'
+	option device 'gw+'
 
 config forwarding
 	option dest 'wan'
@@ -110,8 +110,8 @@ config rule
 
 config rule
         option src 'wan'         
-        option proto 'tcp udp'       
-        option dest_port '81 137 138 139 445 9091 8123'
+        option proto 'tcpudp'       
+        option dest_port '81 161 137 138 139 445 9091 8123'
         option name 'blockconfig'
         option target 'DROP'
 
@@ -130,7 +130,7 @@ config rule
 
 config rule
         option src 'guest'         
-        option proto 'tcp udp'       
+        option proto 'tcpudp'       
         option dest_port '81 137 138 139 445 8123'
         option name 'blockconfig2'
         option target 'DROP'
