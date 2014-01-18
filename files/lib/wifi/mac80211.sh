@@ -122,6 +122,7 @@ config wifi-iface
 	option mode     ap
 	option ssid     CEROwrt$smartssid
 	option encryption none
+	option mcast_rate 9000
 
 config wifi-iface
 	option device   radio$devidx
@@ -130,6 +131,7 @@ config wifi-iface
 	option ifname	gw${devidx}0
 	option ssid     CEROwrt-guest$smartssid
 	option encryption none
+	option mcast_rate 9000
 
 config wifi-iface
 	option device   radio$devidx
@@ -138,6 +140,7 @@ config wifi-iface
 	option mode     adhoc
 	option ssid     babel
 	option encryption none
+	option mcast_rate 9000
 
 EOF
 	devidx=$(($devidx + 1))
