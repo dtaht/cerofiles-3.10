@@ -1,5 +1,5 @@
 config system
-        option hostname cerowrt
+        option hostname cerowrt.home.lan
         option timezone UTC
 
 config timeserver ntp
