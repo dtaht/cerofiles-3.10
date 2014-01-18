@@ -15,6 +15,12 @@
 # Because these rules are being inserted at the head of the list
 # They are in reverse order
 
+
+exit 0
+
+# These are some old rules not used anymore with the new firewall system.
+
+
 TCPPORTS=22,222,636,873,53,25,587,993:994
 TCPPORTS2=631,765,1024:65535,119,563
 UDPPORTS=53,123,161:162
