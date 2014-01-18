@@ -2,13 +2,18 @@
 
 days=3650
 bits=1024
-key=/etc/lighttpd.key
-cert=/etc/lighttpd.crt
+key=/etc/lighttpd/lighttpd.key
+csr=/etc/lighttpd/lighttpd.csr
+cert=/etc/lighttpd/lighttpd.crt
+pem=/etc/lighttpd/lighttpd.pem
 country=US
-state=Maine
+state=California
 location=Erewhon
-commonname=OpenWrt
+commonname=cerowrt.home.lan
 
-/usr/sbin/px5g selfsigned -der \
-    -days $days -newkey rsa:$bits -keyout "$key" -out "$cert" \
-    -subj "/C=$country/ST=$state/L=$location/CN=$commonname"
+openssl genrsa -out $key $bits
+openssl req -new -key $key -out $csr \
+     -subj "/C=$country/ST=$state/L=$location/CN=$commonname"
+openssl x509 -req -days $days \
+    -in $csr -signkey $key -out $cert
+cat $key $cert > $pem
