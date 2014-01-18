@@ -136,3 +136,5 @@ config rule
         option name 'blockconfig2'
         option target 'DROP'
 
+config include                                             
+        option path /etc/firewall.user
