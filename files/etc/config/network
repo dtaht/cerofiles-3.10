@@ -15,7 +15,7 @@ config interface ge00
 	option 'ifname'	'ge00'
 	option 'proto'	'dhcp'
 
-config interface ge01
+config interface wan6
 	option ifname	@ge00
 	option proto	dhcpv6
 	option 'broadcast' '1'
