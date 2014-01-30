@@ -31,7 +31,7 @@ config general
 	# The configuration file is not necessary since you can do everything
 	# from this file.
 	# option 'conf_file' '/etc/babeld.conf'
-	# option 'log_file' '/var/log/babeld.log'
+	option 'log_file' '/dev/null'
 
 # You can use aliases (like lan, wlan) or real names (like eth0.0).
 # If you use an alias, it must be already defined when babeld starts.
@@ -87,19 +87,19 @@ config filter
 	option 'le' '0'
 	option 'proto' '0'
 	# Action 
-	option 'action' 'metric 128'
+	option 'action' 'metric 96'
 # 	These distribute all the routes on all the interfaces
 #	For both ipv6 and ipv4
 config filter
 	option 'ignore' 'true'
 	option 'type' 'redistribute'
 	option 'if' 'ge00' 
-	option 'action' 'metric 128'
+	option 'action' 'metric 96'
 config filter
 	option 'ignore' 'false'
 	option 'type' 'redistribute'
 	option 'if' 'se00' 
-	option 'action' 'metric 128'
+	option 'action' 'metric 96'
 config filter
 	option 'ignore' 'false'
 	option 'type' 'redistribute'
