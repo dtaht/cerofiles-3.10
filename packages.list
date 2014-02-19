@@ -112,14 +112,9 @@ time
 bismark-active
 bismark-mgmt
 cerowrt-chrome
-bind-latest-server
 debloat
-freifunk-firewall
-freifunk-p2pblock
-freifunk-watchdog
 iwinfo
 luci
-freifunk-policyrouting
 meshwizard
 uftp
 nuttcp
@@ -187,3 +182,6 @@ nmap
 owampd
 bind-server
 isc-dhcp-server-ipv6
+unbound
+ohybridproxy
+squid
