@@ -88,6 +88,18 @@ config filter
 	option 'proto' '0'
 	# Action 
 	option 'action' 'metric 96'
+
+# if you are an ipv6 source specific gateway un-ignore
+config filter                                                                
+        option 'ignore' 'true'                                            
+        # Type 
+        option 'type' 'redistribute'
+        # Selectors: ip, eq, le, ge, neigh, id, proto, local, if
+        option 'src_ip' '::/0'
+        option 'src_ge' '0'
+        option 'proto' '0'
+        # Action                                                           
+        option 'action' 'metric 96'
 # 	These distribute all the routes on all the interfaces
 #	For both ipv6 and ipv4
 config filter

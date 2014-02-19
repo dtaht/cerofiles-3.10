@@ -1,9 +1,0 @@
-#!/bin/sh
-#Various daemons no longer start properly on first boot
-
-sleep 70
-/etc/init.d/pimd restart
-/etc/init.d/minissdpd restart
-sleep 1
-/etc/init.d/dnsmasq restart
-
