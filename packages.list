@@ -106,11 +106,8 @@ tcpdump
 libdbi
 ipv6calc
 jpeg
-bismark-chrome
 shaperprobe
 time
-bismark-active
-bismark-mgmt
 cerowrt-chrome
 debloat
 iwinfo
@@ -185,3 +182,6 @@ isc-dhcp-server-ipv6
 unbound
 ohybridproxy
 squid
+hnetd
+libnettle
+libhogweed
