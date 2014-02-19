@@ -142,7 +142,6 @@ dibbler-server
 openssh-sftp-server
 samba36-server
 zile
-aqm-scripts
 rng-tools
 avahi-daemon
 fprobe
@@ -180,5 +179,11 @@ nut-monitor
 tahoe-lafs
 aiccu
 pure-ftpd
-luci-app-aqm
 tinc
+sqm-scripts
+luci-app-sqm
+mosh-server
+nmap
+owampd
+bind-server
+isc-dhcp-server-ipv6
