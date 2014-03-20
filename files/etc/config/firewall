@@ -112,7 +112,7 @@ config rule
 config rule
         option src 'wan'         
         option proto 'tcpudp'       
-        option dest_port '81 161 137 138 139 445 9091 8123'
+        option dest_port '81 161 137 138 139 445 9091 8123 1900 2869 5351'
         option name 'blockconfig'
         option target 'DROP'
 
@@ -132,7 +132,7 @@ config rule
 config rule
         option src 'guest'         
         option proto 'tcpudp'       
-        option dest_port '81 137 138 139 445 8123'
+        option dest_port '81 137 138 139 445 8123 1900 2869 5351'
         option name 'blockconfig2'
         option target 'DROP'
 
