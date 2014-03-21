@@ -366,8 +366,8 @@ CONFIG_TARGET_INIT_SUPPRESS_STDERR=y
 CONFIG_VERSIONOPT=y
 CONFIG_VERSION_DIST="CeroWrt"
 CONFIG_VERSION_NICK="Toronto"
-CONFIG_VERSION_NUMBER="3.10.32-9"
-CONFIG_VERSION_REPO="http://snapon.lab.bufferbloat.net/~cero2/cerowrt/wndr/3.10.32-9/packages"
+CONFIG_VERSION_NUMBER="3.10.32-12"
+CONFIG_VERSION_REPO="http://snapon.lab.bufferbloat.net/~cero2/cerowrt/wndr/3.10.32-12/packages"
 CONFIG_SMIMEOPT=y
 CONFIG_OPKGSMIME_CERT="/build/cero2/cero2.pem"
 CONFIG_OPKGSMIME_KEY="/build/cero2/cero2.key"
@@ -2932,6 +2932,7 @@ CONFIG_PACKAGE_luci-mod-rpc=m
 # 3. Applications
 #
 CONFIG_PACKAGE_luci-app-ahcp=y
+CONFIG_PACKAGE_luci-app-bcp38=y
 CONFIG_PACKAGE_luci-app-commands=m
 CONFIG_PACKAGE_luci-app-ddns=y
 # CONFIG_PACKAGE_luci-app-diag-core is not set
@@ -2950,7 +2951,7 @@ CONFIG_PACKAGE_luci-app-olsr=m
 # CONFIG_PACKAGE_luci-app-olsr-services is not set
 # CONFIG_PACKAGE_luci-app-olsr-viz is not set
 # CONFIG_PACKAGE_luci-app-p2pblock is not set
-# CONFIG_PACKAGE_luci-app-p910nd is not set
+CONFIG_PACKAGE_luci-app-p910nd=m
 # CONFIG_PACKAGE_luci-app-pbx is not set
 CONFIG_PACKAGE_luci-app-polipo=y
 CONFIG_PACKAGE_luci-app-qos=m
@@ -3284,13 +3285,14 @@ CONFIG_PACKAGE_leafnode-extra=m
 # CONFIG_PACKAGE_cups-locale-zh is not set
 # CONFIG_PACKAGE_cups-locale-zh_TW is not set
 # CONFIG_PACKAGE_cups-ppdc is not set
-# CONFIG_PACKAGE_p910nd is not set
+CONFIG_PACKAGE_p910nd=m
 
 #
 # Routing and Redirection
 #
 CONFIG_PACKAGE_babeld=y
 # CONFIG_PACKAGE_babels is not set
+CONFIG_PACKAGE_bcp38=y
 CONFIG_PACKAGE_genl=m
 CONFIG_PACKAGE_igmpproxy=m
 CONFIG_PACKAGE_ip=y
@@ -4004,5 +4006,6 @@ CONFIG_PACKAGE_uboot-envtools=y
 # CONFIG_PACKAGE_uuidgen is not set
 # CONFIG_PACKAGE_watchcat is not set
 # CONFIG_PACKAGE_whereis is not set
+CONFIG_PACKAGE_wifitoggle=m
 # CONFIG_PACKAGE_xxd is not set
 # CONFIG_PACKAGE_xz is not set
