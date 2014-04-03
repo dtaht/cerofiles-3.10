@@ -132,4 +132,14 @@ config filter
 	option 'type' 'redistribute'
 	option 'if' 'gw10' 
 	option 'action' 'metric 192'
+config filter
+	option 'ignore' 'false'
+	option 'type' 'redistribute'
+	option 'if' 'gw01' 
+	option 'action' 'metric 256'
+config filter
+	option 'ignore' 'false'
+	option 'type' 'redistribute'
+	option 'if' 'gw11' 
+	option 'action' 'metric 192'
 
