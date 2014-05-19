@@ -184,5 +184,10 @@ ohybridproxy
 squid
 hnetd
 libnettle
-libhogweed
 cerowrt-interfaces
+dnscrypt-proxy
+libsodium
+radscecproxy
+hping3
+bcp38
+isochronous
