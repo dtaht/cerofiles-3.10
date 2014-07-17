@@ -9,13 +9,14 @@ config general
 	# Enable  detection of idle networks.  This functonality is
 	# experimental, don't use it unless you know what you are doing.
 	## option 'idle_hello_interval' '0'
-	# option 'diversity' '0,128'
-	option 'smoothed-metric' '4'
+	option 'diversity' '3'
+	option 'smoothing_half_time' '4'
+	#option 'smoothed-metric' '4'
 	# option 'kernel_priority' '0'
 	# Do not use this option unless you know what you are doing, as it can
 	# cause persistent route flapping.
 	## option 'duplication_priority' '0'
-	# option 'carrier_sense' 'false'
+	option 'carrier_sense' 'true'
 	# option 'assume_wireless' 'false'
 	# option 'no_split_horizon' 'false'
 	# option 'parasitic' 'false'
@@ -30,7 +31,7 @@ config general
 	## option 'import_table' '0'
 	# The configuration file is not necessary since you can do everything
 	# from this file.
-	# option 'conf_file' '/etc/babeld.conf'
+	option 'conf_file' '/etc/babeld.conf'
 	option 'log_file' '/dev/null'
 
 # You can use aliases (like lan, wlan) or real names (like eth0.0).
@@ -47,12 +48,14 @@ config interface se00
 option 'ignore' 'false'
 config interface sw00
 option 'ignore' 'false'
+option 'rxcost' '384'
 config interface sw10
 option 'ignore' 'false'
 config interface gw10
 option 'ignore' 'false'
 config interface gw00
 option 'ignore' 'false'
+option 'rxcost' '384'
 # Strongly do not prefer 2.4ghz
 config interface gw01
 option 'ignore' 'false'
@@ -77,17 +80,6 @@ option 'ignore' 'false'
 # Here is a sample filter wich redistributes the default route if its
 # protocol number is "boot", e.g. when it installed by dhcp.  It is
 # disabled by default.
-# Uncomment this if you are a default gw
-config filter
-	option 'ignore' 'true'
-	# Type
-	option 'type' 'redistribute'
-	# Selectors: ip, eq, le, ge, neigh, id, proto, local, if
-	option 'ip' '0.0.0.0/0' 
-	option 'le' '0'
-	option 'proto' '0'
-	# Action 
-	option 'action' 'metric 96'
 
 # if you are an ipv6 source specific gateway un-ignore
 config filter                                                                
@@ -101,45 +93,36 @@ config filter
         # Action                                                           
         option 'action' 'metric 96'
 # 	These distribute all the routes on all the interfaces
+
 #	For both ipv6 and ipv4
+
+#change to allow if you are a default gw
+
 config filter
-	option 'ignore' 'true'
+        option 'ignore' 'false'                                            
 	option 'type' 'redistribute'
-	option 'if' 'ge00' 
-	option 'action' 'metric 96'
+	option 'ip' '0.0.0.0/0'
+	option 'le' '0'
+	option 'action' 'deny'
+
 config filter
-	option 'ignore' 'false'
+        option 'ignore' 'false'                                            
 	option 'type' 'redistribute'
-	option 'if' 'se00' 
-	option 'action' 'metric 96'
+	option 'ip' '::/0'
+	option 'le' '0'
+	option 'action' 'deny'
+
 config filter
-	option 'ignore' 'false'
+        option 'ignore' 'false'                                            
 	option 'type' 'redistribute'
-	option 'if' 'sw00' 
-	option 'action' 'metric 256'
+	option 'ip' '::/0'
+	option 'le' '61'
+	option 'action' 'allow'
+
 config filter
-	option 'ignore' 'false'
+        option 'ignore' 'false'                                            
 	option 'type' 'redistribute'
-	option 'if' 'sw10' 
-	option 'action' 'metric 192'
-config filter
-	option 'ignore' 'false'
-	option 'type' 'redistribute'
-	option 'if' 'gw00' 
-	option 'action' 'metric 256'
-config filter
-	option 'ignore' 'false'
-	option 'type' 'redistribute'
-	option 'if' 'gw10' 
-	option 'action' 'metric 192'
-config filter
-	option 'ignore' 'false'
-	option 'type' 'redistribute'
-	option 'if' 'gw01' 
-	option 'action' 'metric 256'
-config filter
-	option 'ignore' 'false'
-	option 'type' 'redistribute'
-	option 'if' 'gw11' 
-	option 'action' 'metric 192'
+	option 'ip' '0.0.0.0/0'
+	option 'le' '24'
+	option 'action' 'allow'
 

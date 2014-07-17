@@ -15,7 +15,7 @@
 # Because these rules are being inserted at the head of the list
 # They are in reverse order
 
-
+ip route add unreachable 172.30.42.0/24 proto static
 exit 0
 
 # These are some old rules not used anymore with the new firewall system.
